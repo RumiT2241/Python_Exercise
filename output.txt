@@ -1,11 +1,3 @@
-## Run
-
-python main.py payload.txt
-
-if argument not provided payload file should be same directory named "paylod.txt"
-
-## Output of sample payload:
-
 COMPANY
 ======
 [{"GUID": "1c898066-858e-406c-a15d-36146c9642de", "NAME": "Paylocity"}, {"GUID": "0090d7b0-b07a-47cd-b295-ff798a6c0613", "NAME": "Burrito Shack"}]

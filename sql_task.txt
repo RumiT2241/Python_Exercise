@@ -1,0 +1,26 @@
+
+1. Average salary of employee
+select avg(SALARY) from employee;
+
+2. Update previous query to give us the average salary for each company.
+select avg(SALARY) from employee group by COMPANY_GUID;
+
+3. Let’s assume your previous query was long running how would you go about debugging
+I will use EXPLAIN for query plan and execution.
+Also will add index over field used in group by
+
+
+Write a SQL report that gives us average salary's of all positions
+select avg(SALARY) from employee group by POSITION_GUID;
+
+Update previous query to give us average salary's of all positions for each company
+select company_guid,POSITION_GUID, avg(SALARY) from employee group by POSITION_GUID,COMPANY_GUID;
+with names
+select position_sql.NAME,company_sql.NAME, avg(SALARY)
+    from employee_sql, position_sql,company_sql
+    where employee_sql.POSITION_GUID = position_sql.GUID and
+          employee_sql.COMPANY_GUID =company_sql.GUID
+    group by employee_sql.POSITION_GUID,employee_sql.COMPANY_GUID;
+
+I will use EXPLAIN for query plan and execution.
+Also will add index over field used in group by
